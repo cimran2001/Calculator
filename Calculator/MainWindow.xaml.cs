@@ -36,7 +36,6 @@ namespace WpfApp1
         private void CE_Click(object sender, RoutedEventArgs e)
         {
             currentNumber.Text = "0";
-            _toReset = true;
         }
 
         private void C_Click(object sender, RoutedEventArgs e)
@@ -65,7 +64,7 @@ namespace WpfApp1
 
         private void _number_Click(object sender, RoutedEventArgs e)
         {
-            if (_toReset)
+            if (currentNumber.Text == "0" || _toReset)
             {
                 _toReset = false;
                 currentNumber.Text = "";

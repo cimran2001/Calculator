@@ -20,6 +20,7 @@
 
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="3"/>
+            <Setter Property="Focusable" Value="False"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -66,9 +67,6 @@
         <Button Name="_plus" Grid.Row="5" Grid.Column="3" Click="_plus_Click" Style="{DynamicResource RoundButton}" Grid.ColumnSpan="2">+</Button>
         <Button Name="_dot" Grid.Row="6" Grid.Column="0" Click="_dot_Click" Style="{DynamicResource RoundButton}">.</Button>
         <Button Name="_0" Grid.Row="6" Grid.Column="1" Click="_number_Click" Style="{DynamicResource RoundButton}">0</Button>
-        <Button Name="_equals" Grid.Row="6" Grid.Column="2"
-                Grid.ColumnSpan="3" Click="_equals_Click" Style="{DynamicResource RoundButton}">=</Button>
+        <Button Name="_equals" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Click="_equals_Click" Style="{DynamicResource RoundButton}">=</Button>
     </Grid>
 </Window>
-
-  
