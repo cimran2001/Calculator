@@ -20,6 +20,7 @@
 
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="3"/>
+            <Setter Property="Focusable" Value="False"/>
         </Style>
     </Window.Resources>
     <Grid>
