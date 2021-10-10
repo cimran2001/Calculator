@@ -153,6 +153,7 @@ namespace WpfApp1
 
         private void _plus_Click(object sender, RoutedEventArgs e)
         {
+            _equals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             _toReset = true;
             _operation = Operations.ADD;
             operationHistory.Text = _currentNumber.ToString(System.Globalization.CultureInfo.InvariantCulture) + "+";
@@ -160,6 +161,7 @@ namespace WpfApp1
 
         private void _minus_Click(object sender, RoutedEventArgs e)
         {
+            _equals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             _toReset = true;
             _operation = Operations.SUBTRACT;
             operationHistory.Text = _currentNumber.ToString(System.Globalization.CultureInfo.InvariantCulture) + "-";
@@ -167,6 +169,7 @@ namespace WpfApp1
 
         private void _mult_Click(object sender, RoutedEventArgs e)
         {
+            _equals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             _toReset = true;
             _operation = Operations.MULTIPLY;
             operationHistory.Text = _currentNumber.ToString(System.Globalization.CultureInfo.InvariantCulture) + "*";
@@ -174,6 +177,7 @@ namespace WpfApp1
 
         private void _div_Click(object sender, RoutedEventArgs e)
         {
+            _equals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             _toReset = true;
             _operation = Operations.DIVIDE;
             operationHistory.Text = _currentNumber.ToString(System.Globalization.CultureInfo.InvariantCulture) + "/";
