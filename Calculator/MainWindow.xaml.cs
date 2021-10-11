@@ -58,6 +58,8 @@ namespace WpfApp1
         {
             if (currentNumber.Text.Length == 0)
                 _currentNumber = 0;
+            else if (currentNumber.Text.Length > 10)
+                currentNumber.Text = currentNumber.Text.Substring(0, currentNumber.Text.Length - 1);
             else
                 _currentNumber = double.Parse(currentNumber.Text, System.Globalization.CultureInfo.InvariantCulture);
         }
@@ -191,27 +193,27 @@ namespace WpfApp1
                 return;
             }
 
-            double num1 = double.Parse(operationHistory.Text.Substring(0, operationHistory.Text.Length - 1));
+            double num1 = double.Parse(operationHistory.Text.Substring(0, operationHistory.Text.Length - 1), System.Globalization.CultureInfo.InvariantCulture);
             double num2 = _currentNumber;
 
-            operationHistory.Text += $"{num2}=";
+            operationHistory.Text += $"{num2.ToString(System.Globalization.CultureInfo.InvariantCulture)}=";
 
             switch (_operation)
             {
                 case Operations.ADD:
-                    currentNumber.Text = $"{num1 + num2}";
+                    currentNumber.Text = $"{Math.Round(num1 + num2, 5).ToString(System.Globalization.CultureInfo.InvariantCulture)}";
                     break;
 
                 case Operations.SUBTRACT:
-                    currentNumber.Text = $"{num1 - num2}";
+                    currentNumber.Text = $"{Math.Round(num1 - num2, 5).ToString(System.Globalization.CultureInfo.InvariantCulture)}";
                     break;
 
                 case Operations.MULTIPLY:
-                    currentNumber.Text = $"{num1 * num2}";
+                    currentNumber.Text = $"{Math.Round(num1 * num2, 5).ToString(System.Globalization.CultureInfo.InvariantCulture)}";
                     break;
 
                 case Operations.DIVIDE:
-                    currentNumber.Text = $"{num1 / num2}";
+                    currentNumber.Text = $"{Math.Round(num1 / num2, 5).ToString(System.Globalization.CultureInfo.InvariantCulture)}";
                     break;
             }
             _operation = null;
